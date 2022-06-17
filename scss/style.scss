@@ -1,0 +1,555 @@
+* {
+    margin:0;
+    /*padding:0;*/
+} 
+$color1: #f8eede;
+$color2: #fff8dc;
+$color3: #C6A067;
+$color4: #ffffff;
+$color5: #9c7e51;
+
+.btn{
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    max-width: 500px;
+    margin-left: 500px;
+} /* PARA USAR @EXTEND */
+/* @mixin formatoitems {
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    max-width: 500px;
+    margin-left: 500px;
+} en este caso no aplica porque no modifica las variables*/
+
+html{
+    height: 100%;
+}
+body{
+    background-color: $color1  !important;
+    min-height: 100%;
+}
+.grid-container{
+    display: grid;
+    background-color: $color2;
+    gap: 10px;
+    grid-template-areas: "menu menu menu"
+                         "img1 texto1 texto1"
+                         "texto2 texto2 img2"
+                         "img3 texto3 texto3"
+                         "texto4 texto4 img4"
+                         "pf pf pf"
+                         "footer footer footer";
+}
+
+.grid-container div{
+    background-color: $color3;
+    
+    color: $color4;
+    padding: 10px;
+    border: 1px solid black;
+    gap: 10px;
+   /* transition-property: padding;
+    transition: padding 2s;*/
+}
+/*.grid-container div:hover{
+    padding: 20px; (mueve todos los padding y se descajeta un poco)
+}*/
+.grid-container div nav ul li{
+    height: 20px;
+    width: 250px;
+    font-size: larger;
+    transition-property: height;
+    transition: height 2s;
+}
+.grid-container div nav ul li:hover{
+    height: 40px;
+    font-size: x-large;
+}
+
+/*ARMADO DE ESTRUCTURA*/
+.item1{
+    grid-area: menu;
+}
+.item2{
+    grid-area: img1;
+}
+.item3{
+    grid-area: texto1;
+    line-height: 1.5;
+}
+.item4{
+    grid-area: texto2;
+}
+.item5{
+    grid-area: img2;
+}
+.item6{
+    grid-area: img3;
+}
+.item7{
+    grid-area: texto3;
+}
+.item8{
+    grid-area: texto4;
+}
+.item9{
+    grid-area: img4;
+}
+.item10{
+    grid-area: footer;
+}
+.accordionExample{
+    grid-area: pf;
+}
+
+/*CONFIGURACIONES DE ITEMS Y SUBITEMS*/
+
+/*item 1*/
+
+.item1 nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.item1 nav ul li{
+    width: 10%;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.item1 nav ul li a{
+    text-decoration: none;
+    color: $color4;
+}
+/* item 2*/
+.item2{
+    text-align: center;
+}
+/* ITEM 3*/
+.item3 h2{
+    text-align: center;
+}
+.item3 h3{
+    text-align: center;
+
+}
+.item3 ul{
+    list-style-type: square;
+    font-size: x-large;
+}
+.item3 ul li{
+    font-size: medium;
+}
+.item3 p{
+    @extend .btn; 
+}
+/* ITEM4 */
+.item4 h2{
+    text-align: center;
+}
+.item4 h3{
+    text-align: center;
+}
+.item4 ul{
+    list-style-type: square;
+    font-size: x-large;
+}
+.item4 ul li{
+    font-size: medium;
+}
+.item4 p{
+    @extend .btn;
+}
+/*ITEM5*/
+.item5{
+    text-align: center;
+}
+/*ITEM6*/
+.item6 img{
+    width: 400px;
+    text-align: center;
+}
+/*ITEM7*/
+.item7 h2{
+    text-align: center;
+}
+.item7 ul{
+    list-style-type: square;
+    font-size: x-large;
+}
+.item7 ul li{
+    font-size: medium;
+}
+.item7 p{
+    @extend .btn;
+}
+/*item8*/
+.item8 h2{
+    text-align: center;
+}
+.item8 ul{
+    list-style-type: square;
+    font-size: x-large;
+}
+.item8 ul li{
+    font-size: medium;
+}
+.item8 p{
+    @extend .btn;
+}
+/*ITEM9*/
+.item9{
+    text-align: center;
+}
+.item9 img{
+    width: 50%;
+}
+/*FOOTER PAG PRIN. ITEM10*/
+
+.item10{
+    line-height: 1.5;
+    background-color: $color5 !important;
+    
+}
+.item10 nav{
+    color: $color4;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 10%;
+}
+
+.item10 nav ul{
+    list-style-type: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style: none;
+    
+} 
+
+.item10 nav ul li{
+    display: inline-block;
+    width: 23%;
+    position: relative;
+    font-size: 18px;
+    font-weight: normal;
+    
+}
+/*edicion paginas secundarias*/
+/*HEADER*/
+header{ 
+    background-color: $color3;
+    
+}
+header nav ul{  
+    list-style-type: none;
+}
+
+header nav ul li{
+    display: inline-block;
+    height: 35px;
+    width: 15%;
+    position: relative;
+    font-size: x-large;
+    margin-left: 100px;
+    font-weight: bold;
+    transition-property: height;
+    transition: height 2s;
+}
+header nav ul li:hover{
+    height: 55px;
+    font-size: xx-large;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: $color4;
+}
+/*PRODUCTOS*/
+
+#divproductos{ background-color: #f0c990;
+}
+#divproductos h1{
+text-align: center;
+}
+#divproductos ul{
+ list-style-type: none;   
+}
+#divproductos ul li{
+    display: inline-block;
+    width: 11%;
+    position: relative;
+    font-size: 18px;
+    margin-left: 100px;
+    font-weight: bold; 
+    color: "$color4";   
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/*BOTELLAS*/
+#divBotellas ul h1{
+    text-align: center;
+}
+
+/*una vez que esten las fotos, se agregaran y ubicaran*/
+
+/*SERVICIO DE CHOPERA*/
+#divServicioChopera{
+    margin-left: 30%;
+    border: solid 2.5px;
+    max-width: 350px;
+    padding-left: 5px;
+}
+#divServicioChopera p{
+    font-size: larger;
+}
+#servicioChopera{
+    margin-left: 9.5%;
+
+}
+#servicioChopera h2{
+    font-size: xx-large;
+}
+#servicioChopera p {
+    font-size: x-large;
+    line-height: 2 !important;
+}
+
+/*SOBRE-NOSOTROS*/
+#sobreNosotros h1{
+    margin-left: 15%;
+}
+#sobreNosotros li{
+    font-size: larger;
+    margin-left: 20%;
+}
+#barrio{
+    margin-left: 65%;
+}
+iframe{
+    margin-left: 65%;
+}
+
+/*CARRITO DE COMPRAS*/
+#carrito{
+    margin-left: 5%;
+}
+#carrito h1{
+    margin-left: 35%;
+    margin-top: -5%;
+}
+#carrito select{
+    margin-left: 35%;
+    margin-top: -5%;
+}
+#carrito div{
+    margin-left: 35%;
+    margin-top: 1%;
+}
+#carrito textarea{
+    margin-left: 35%;
+    margin-top: 1%;
+    width: 350px; /*ancho*/
+    height: 180px; /*alto*/
+}
+
+/*FOOTER*/
+
+footer{
+    line-height: 1.5;
+    background-color: $color5 ;
+    
+}
+footer nav{
+    color: $color4;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 10%;
+}
+
+footer nav ul{
+    list-style-type: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style: none;
+} 
+
+footer nav ul li{
+    display: inline-block;
+    width: 23%;
+    position: relative;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+@media screen and (max-width: 321px) {
+    .grid-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+    .grid-container div nav ul li{
+        width: auto;
+    }
+    /*item1*/
+    .item1{
+        display: flexbox;
+        order: -7;
+        margin-left: 48px;
+    }
+    .item1 nav ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .item1 nav ul li{
+        width: 10%;
+        font-size: 20px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+    .item1 nav ul li a{
+        text-decoration: none;
+        color:  $color4;
+    }
+    /*ITEM2*/
+    .item2{
+        order: -5;
+    }
+    .item2 img{
+        width: 55%;
+        
+    }
+    /*item3*/
+    .item3{
+        order: -6;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .item3 p{    
+        max-width: 300px;
+        margin-left: 40px;
+        border: 1px solid $color4;
+    }
+    /*ITEM4*/
+    .item4{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        order: -4;
+    }
+    .item4 p{
+        max-width: 300px;
+        margin-left: 40px;
+        border: 1px solid $color4;
+    }
+    /*ITEM5*/
+    .item5{
+        order: -3;
+    }
+    .item5 img{
+        width: 50%;
+    }
+    /*ITEM6*/
+    .item6{
+        order: -1;
+    }
+    .item6 img{
+        width: 99%;
+    }
+    /*ITEM7*/
+    .item7{
+        order: -2;
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .item7 p{
+        max-width: 300px;
+        margin-left: 40px;
+        border: 1px solid$color4;
+    }
+    /*ITEM8*/
+    .item8{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .item8 p{
+        max-width: 300px;
+        margin-left: 40px;
+        border: 1px solid $color4;
+    }
+    /*ITEM10*/
+    .item10{
+        line-height: 1.5;
+        background-color: $color5 !important;
+        width: 100%;
+    }
+    .item10 nav ul li{
+        display: flex;
+        flex-flow: row;
+    }
+    /*PAGINAS SECUNDARIOS*/
+    /*FOOTER DE TODAS LAS PAGS*/
+    footer nav ul li{
+        display: flex;
+    }
+    /*pag productos*/
+    #divproductos ul li{
+        display: flex;
+        margin-left: 50px;  
+    }
+    /*servicio chopera*/
+    #divServicioChopera{
+        margin-left: 5%;
+        border: solid 2.5px;
+        max-width: 300px;
+        padding-left: 5px;
+    }
+    #servicioChopera p {
+        font-size: large;
+    }
+    /*sobre nosotros*/
+    #sobreNosotros h1{
+        margin-left: 5%;
+    }
+    #sobreNosotros li{
+        font-size: larger;
+        margin-left: 2%;
+    }
+    #barrio{
+        margin-left: 10%;
+    }
+    iframe{
+        margin-left: 0%;
+        width: 80%;
+    }
+    /*carrito de compras*/
+    #carrito{
+        display: flex;
+        flex-flow: column wrap;
+        margin-left: 3,5%;
+    }
+    #carrito h1{
+        margin-left:2%;
+        margin-top: 5%;
+    }
+    #carrito select{
+        margin-left: 3%;
+        margin-top: 2%;
+    }
+    #carrito div{
+        margin-left: 0%;
+        margin-top: 1%;
+    }
+    #carrito div ul li{
+        margin-left: -2%;
+    }
+    #carrito textarea{
+        margin-left: 2%;
+        margin-top: 1%;
+        width: 175px; /*ancho*/
+        height: 90px; /*alto*/
+    }
+}
+
